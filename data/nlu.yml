@@ -1,0 +1,365 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: exercise_inquiry
+  examples: |
+    - What exercises can I do for my [arms](body_part)?
+    - How can I work out my [legs](body_part)?
+    - Give me some [abs](body_part) exercises
+    - I want to strengthen my [back](body_part)
+    - What are good [chest](body_part) exercises?
+    - How do I exercise my [shoulders](body_part)?
+    - What can I do for my [biceps](body_part)?
+    - I need exercises for my [triceps](body_part)
+    - How to work on my [forearms](body_part)?
+    - What are some good [abs](body_part) exercises?
+    - Give me exercises for [glutes](body_part)
+    - How can I strengthen my [quads](body_part)?
+    - What about [hamstring](body_part) exercises?
+    - I want to work on my [calves](body_part)
+    - How do I exercise my [lower back](body_part)?
+    - What are some good [upper back](body_part) exercises?
+    - How can I work on my [traps](body_part)?
+    - Give me exercises for [lats](body_part)
+    - What can I do for my [deltoids](body_part)?
+    - How to exercise my [pecs](body_part)?
+    - I need some [obliques](body_part) exercises
+    - What are good exercises for [hip flexors](body_part)?
+    - How can I strengthen my [IT band](body_part)?
+    - Give me some [full body](body_part) exercises
+    - What exercises target the [lower body](body_part)?
+    - How do I work out my [upper body](body_part)?
+    - Can you suggest exercises for my [neck](body_part)?
+    - What are good [rotator cuff](body_part) exercises?
+    - How can I strengthen my [wrists](body_part)?
+    - What exercises are good for [ankles](body_part)?
+    - Best exercises for [arms](body_part)?
+    - Most effective [leg](body_part) workouts?
+    - Top [abs](body_part) exercises?
+    - Recommended [back](body_part) strengthening exercises?
+    - What's a good [chest](body_part) routine?
+    - Best ways to build [shoulder](body_part) muscles?
+    - How to get bigger [biceps](body_part)?
+    - Exercises to tone [triceps](body_part)?
+    - Ways to improve [forearm](body_part) strength?
+    - What's a challenging [core](body_part) workout?
+    - Exercises to shape [glutes](body_part)?
+    - How to build stronger [quads](body_part)?
+    - Best [hamstring](body_part) exercises for flexibility?
+    - Ways to increase [calf](body_part) size?
+    - Exercises to relieve [lower back](body_part) pain?
+    - How to improve [upper back](body_part) posture?
+    - Best exercises for broad [shoulders](body_part)?
+    - Ways to target [love handles](body_part)?
+    - Exercises for a stronger [neck](body_part)?
+    - How to prevent [rotator cuff](body_part) injuries?
+    - Exercises to improve [wrist](body_part) strength for weightlifting?
+    - Best [ankle](body_part) strengthening exercises for runners?
+    - How to target inner [thighs](body_part)?
+    - Exercises for outer [thigh](body_part) definition?
+    - Ways to improve [hip](body_part) mobility?
+    - Best exercises for a [v-taper](body_part) back?
+    - How to get [six-pack abs](body_part)?
+    - Exercises to improve [grip](body_part) strength?
+    - Best [compound exercises](body_part) for overall strength?
+
+- intent: exercise_duration
+  examples: |
+    - How long should I exercise for?
+    - What's the ideal workout duration?
+    - How many sets and reps should I do?
+    - How often should I work out each body part?
+    - What's a good rest time between sets?
+    - How many times a week should I exercise?
+    - What's the recommended exercise frequency?
+    - How long should my workout sessions be?
+    - What's a good exercise routine duration?
+    - How much time should I spend on each exercise?
+    - Is it better to do longer workouts less often or shorter workouts more frequently?
+    - How long should I rest between workouts?
+    - What's the minimum amount of exercise I need per week?
+    - How many days a week should I do strength training?
+    - What's the ideal length for a cardio session?
+    - How often should I take rest days?
+    - Can I work out every day?
+    - How long should my warm-up be?
+    - What's a good cool-down duration?
+    - How long should I hold stretches?
+    - What's the best time of day to exercise?
+    - How long before I see results from working out?
+    - How much exercise is too much?
+    - What's the recommended duration for HIIT workouts?
+    - How long should a beginner's workout last?
+
+- intent: exercise_technique
+  examples: |
+    - What's the proper form for squats?
+    - How do I do a push-up correctly?
+    - What's the right way to do a deadlift?
+    - Can you explain the correct bench press technique?
+    - How should I position my feet for lunges?
+    - What's the proper way to do a plank?
+    - How do I perform a pull-up with good form?
+    - What's the correct technique for bicep curls?
+    - How should I breathe during weightlifting?
+    - What's the proper form for overhead press?
+    - How do I engage my core during exercises?
+    - What's the right way to do a burpee?
+    - How should I position my body for a proper sit-up?
+    - What's the correct form for a Romanian deadlift?
+    - How do I do a proper chin-up?
+    - What's the right technique for tricep dips?
+    - How should I position my hands for push-ups?
+    - What's the proper way to do mountain climbers?
+    - How do I perform a kettlebell swing correctly?
+    - What's the right form for a front squat?
+    - How do I maintain proper form during planks?
+    - What's the correct technique for lat pulldowns?
+    - How should I position my body for a proper lunge?
+    - What's the right way to do a dumbbell row?
+    - How do I perform a proper Bulgarian split squat?
+
+- intent: exercise_equipment
+  examples: |
+    - What equipment do I need for a home gym?
+    - How do I use resistance bands?
+    - What weights should I start with as a beginner?
+    - How do I adjust a weight bench?
+    - What's the difference between dumbbells and barbells?
+    - How do I use a foam roller?
+    - What's a good alternative to weights at home?
+    - How do I use a pull-up bar?
+    - What's the best cardio equipment for home use?
+    - How do I choose the right yoga mat?
+    - What's a kettlebell used for?
+    - How do I use a medicine ball in my workout?
+    - What's the benefit of using a stability ball?
+    - How do I choose the right size dumbbells?
+    - What's an ab roller and how do I use it?
+    - How do I set up a TRX system?
+    - What's the difference between a treadmill and an elliptical?
+    - How do I use a jump rope effectively?
+    - What's a power rack and do I need one?
+    - How do I choose the right resistance for bands?
+    - What equipment is best for building muscle?
+    - Can you recommend budget-friendly home gym equipment?
+    - What's the most versatile piece of exercise equipment?
+    - How do I maintain and clean my exercise equipment?
+    - What equipment do I need for a complete home cardio workout?
+
+- intent: exercise_benefits
+  examples: |
+    - What are the benefits of regular exercise?
+    - How does exercise improve mental health?
+    - What are the physical benefits of working out?
+    - Can exercise help with stress relief?
+    - How does exercise affect sleep quality?
+    - What are the benefits of strength training?
+    - How does cardio exercise benefit the body?
+    - Can exercise help with weight loss?
+    - What are the long-term benefits of staying active?
+    - How does exercise impact brain function?
+    - What are the benefits of flexibility training?
+    - Can exercise help prevent chronic diseases?
+    - How does exercise affect mood and emotions?
+    - What are the benefits of HIIT workouts?
+    - How does exercise benefit cardiovascular health?
+    - Can exercise improve posture?
+    - What are the benefits of exercising outdoors?
+    - How does exercise impact aging?
+    - Can exercise boost the immune system?
+    - What are the social benefits of group exercise?
+
+- intent: exercise_frequency
+  examples: |
+    - How often should I exercise?
+    - What's the ideal workout frequency for beginners?
+    - How many times a week should I do strength training?
+    - What's the recommended frequency for cardio workouts?
+    - How often should I train each muscle group?
+    - Is it okay to exercise every day?
+    - How many rest days do I need per week?
+    - What's the best exercise schedule for weight loss?
+    - How often should I do HIIT workouts?
+    - What's the ideal frequency for yoga practice?
+    - How many times a week should I do flexibility training?
+    - What's the recommended frequency for core workouts?
+    - How often should I change my workout routine?
+    - Is working out three times a week enough?
+    - How frequently should I exercise to build muscle?
+    - What's the best workout frequency for maintaining fitness?
+    - How often should older adults exercise?
+    - What's the ideal workout frequency for athletes?
+    - How many times a week should I do low-impact exercises?
+    - What's the recommended frequency for balance training?
+
+- intent: exercise_progression
+  examples: |
+    - How do I progress in my workouts?
+    - What's the best way to increase workout intensity?
+    - How often should I increase weights in strength training?
+    - What's the right way to progress in cardio exercises?
+    - How do I know when to make my workouts harder?
+    - What's the progressive overload principle?
+    - How can I challenge myself more in my workouts?
+    - What's the safest way to progress in exercise difficulty?
+    - How do I avoid plateaus in my fitness journey?
+    - What are signs that I'm ready to progress my workouts?
+    - How do I progress in bodyweight exercises?
+    - What's the best way to increase running distance?
+    - How should I progress in HIIT workouts?
+    - What's the right pace for progressing in yoga?
+    - How do I progress in flexibility training?
+    - What's the best way to increase workout volume?
+    - How do I progress in plyometric exercises?
+    - What's the proper way to increase sets and reps?
+    - How should I progress when returning from an injury?
+    - What's the best strategy for long-term fitness progression?
+
+- intent: exercise_inquiry
+  examples: |
+    - What exercises can I do for my [core](body_part)?
+    - How can I improve my [cardio](body_part)?
+    - Give me some [full body](body_part) exercises
+    - I want to strengthen my [lower body](body_part)
+    - What are good [upper body](body_part) exercises?
+    - How do I exercise my [glutes](body_part)?
+    - What can I do for my [hamstrings](body_part)?
+    - I need exercises for my [quadriceps](body_part)
+    - How to work on my [calves](body_part)?
+    - What are some good [biceps](body_part) exercises?
+    - Give me exercises for [triceps](body_part)
+    - How can I strengthen my [forearms](body_part)?
+    - What about [trapezius](body_part) exercises?
+    - I want to work on my [lats](body_part)
+    - How do I exercise my [deltoids](body_part)?
+    - What are some good [pectorals](body_part) exercises?
+    - How can I work on my [abdominals](body_part)?
+    - Give me exercises for [obliques](body_part)
+    - What can I do for my [lower back](body_part)?
+    - How to exercise my [neck](body_part)?
+    - I need some [hip flexors](body_part) exercises
+    - What are good exercises for [IT band](body_part)?
+    - How can I strengthen my [rotator cuff](body_part)?
+    - Give me some [wrist](body_part) exercises
+    - What exercises target the [ankles](body_part)?
+
+- intent: ask_for_more_info
+  examples: |
+    - Can you tell me more about that?
+    - I'd like more information
+    - Could you elaborate on that?
+    - What else should I know about this?
+    - Give me more details please
+
+- intent: express_gratitude
+  examples: |
+    - Thank you
+    - Thanks a lot
+    - That's really helpful
+    - I appreciate your help
+    - You've been very helpful
+
+- intent: express_confusion
+  examples: |
+    - I don't understand
+    - Could you explain that again?
+    - I'm not sure I follow
+    - That's confusing
+    - What do you mean by that?
+
+- intent: ask_for_alternatives
+  examples: |
+    - Are there any alternatives?
+    - What else can I do instead?
+    - Is there another way to do this?
+    - Can you suggest something different?
+    - What if I can't do that exercise?

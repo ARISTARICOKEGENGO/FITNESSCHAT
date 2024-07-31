@@ -1,0 +1,114 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: exercise inquiry
+  steps:
+  - intent: exercise_inquiry
+  - action: utter_exercise_advice
+
+- story: exercise duration inquiry
+  steps:
+  - intent: exercise_duration
+  - action: utter_exercise_duration
+
+- story: exercise technique inquiry
+  steps:
+  - intent: exercise_technique
+  - action: utter_exercise_technique
+
+- story: exercise equipment inquiry
+  steps:
+  - intent: exercise_equipment
+  - action: utter_exercise_equipment
+
+- story: exercise benefits inquiry
+  steps:
+  - intent: exercise_benefits
+  - action: utter_exercise_benefits
+
+- story: exercise frequency inquiry
+  steps:
+  - intent: exercise_frequency
+  - action: utter_exercise_frequency
+
+- story: exercise progression inquiry
+  steps:
+  - intent: exercise_progression
+  - action: utter_exercise_progression
+
+- story: interactive fitness advice
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: exercise_inquiry
+  - action: utter_exercise_advice
+  - intent: exercise_duration
+  - action: utter_exercise_duration
+  - intent: exercise_technique
+  - action: utter_exercise_technique
+  - intent: exercise_equipment
+  - action: utter_exercise_equipment
+  - intent: exercise_benefits
+  - action: utter_exercise_benefits
+  - intent: exercise_frequency
+  - action: utter_exercise_frequency
+  - intent: exercise_progression
+  - action: utter_exercise_progression
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ask for more info
+  steps:
+  - intent: exercise_inquiry
+  - action: utter_exercise_advice
+  - intent: ask_for_more_info
+  - action: utter_ask_for_more_info
+
+- story: express gratitude
+  steps:
+  - intent: exercise_inquiry
+  - action: utter_exercise_advice
+  - intent: express_gratitude
+  - action: utter_express_gratitude
+
+- story: express confusion
+  steps:
+  - intent: exercise_inquiry
+  - action: utter_exercise_advice
+  - intent: express_confusion
+  - action: utter_express_confusion
+
+- story: ask for alternatives
+  steps:
+  - intent: exercise_inquiry
+  - action: utter_exercise_advice
+  - intent: ask_for_alternatives
+  - action: utter_ask_for_alternatives

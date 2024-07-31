@@ -1,0 +1,537 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - exercise_inquiry
+  - exercise_duration
+  - exercise_technique
+  - exercise_equipment
+  - exercise_benefits
+  - exercise_frequency
+  - exercise_progression
+  - ask_for_more_info
+  - express_gratitude
+  - express_confusion
+  - ask_for_alternatives
+
+entities:
+  - body_part
+  - core
+  - cardio
+  - full_body
+  - lower_body
+  - upper_body
+  - glutes
+  - hamstrings
+  - quadriceps
+  - calves
+  - biceps
+  - triceps
+  - forearms
+  - trapezius
+  - lats
+  - deltoids
+  - pectorals
+  - abdominals
+  - obliques
+  - lower_back
+  - neck
+  - hip_flexors
+  - it_band
+  - rotator_cuff
+  - wrists
+  - ankles
+
+slots:
+  body_part:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: body_part
+
+responses:
+  utter_ask_for_more_info:
+  - text: "Is there anything specific you'd like to know more about regarding this exercise or body part?"
+  - text: "What other information would be helpful for you?"
+
+  utter_express_gratitude:
+  - text: "You're welcome! I'm glad I could help. Is there anything else you'd like to know about fitness or exercise?"
+  - text: "It's my pleasure to assist you. Do you have any other questions about your workout routine?"
+
+  utter_express_confusion:
+  - text: "I apologize if I wasn't clear. Let me try to explain it differently. Which part confused you?"
+  - text: "I'm sorry for the confusion. Could you tell me which part you'd like me to clarify?"
+
+  utter_ask_for_alternatives:
+  - text: "Of course! There are always alternatives. What specific limitations or preferences do you have that I should consider when suggesting alternatives?"
+  - text: "Certainly! I'd be happy to suggest some alternatives. Do you have any equipment limitations or specific goals I should keep in mind?"
+  utter_cheer_up:
+  - text: "Here's something to cheer you up:"
+  - text: "Don't worry, things will get better!"
+
+  utter_did_that_help:
+  - text: "Did that help you feel better?"
+  - text: "How are you feeling now?"
+
+  utter_happy:
+  - text: "Great! I'm glad to hear that."
+
+  utter_greet:
+  - text: "Hello! I'm your personal fitness assistant. How can I help you with your exercise routine today?"
+
+  utter_goodbye:
+  - text: "Goodbye! Remember to stay active and take care of your body."
+
+  utter_iamabot:
+  - text: "I am an AI-powered fitness assistant, designed to help you with exercise advice and routines."
+
+  utter_exercise_advice:
+  - condition:
+      - type: slot
+        name: body_part
+        value: chest
+    text: "Here's a comprehensive chest workout routine:
+
+    1. Barbell Bench Press:
+       - Sets: 4, Reps: 8-10, Rest: 90 seconds
+       - Equipment: Barbell, bench
+       - Instructions: Lie on a flat bench, lower the barbell to your chest, then push it back up to starting position.
+       - Duration: Perform each rep in about 3-4 seconds (1-2 seconds down, 1-2 seconds up).
+
+    2. Incline Dumbbell Press:
+       - Sets: 3, Reps: 10-12, Rest: 60 seconds
+       - Equipment: Dumbbells, incline bench
+       - Instructions: On an incline bench, press dumbbells from shoulder level until your arms are extended.
+       - Duration: Each rep should take about 3-4 seconds.
+
+    3. Dips:
+       - Sets: 3, Reps: 10-15 (or to failure), Rest: 60 seconds
+       - Equipment: Parallel bars or dip station
+       - Instructions: Lower your body by bending your elbows, then push back up to the starting position.
+       - Duration: Each rep should take about 3-4 seconds.
+
+    4. Cable Flyes:
+       - Sets: 3, Reps: 12-15, Rest: 60 seconds
+       - Equipment: Cable machine, attachments
+       - Instructions: Stand in the center of a cable machine, bring your hands together in front of your chest, then slowly return to the starting position.
+       - Duration: Perform each rep in about 4-5 seconds (2-3 seconds out, 2 seconds in).
+
+    5. Push-Ups:
+       - Sets: 3, Reps: To failure, Rest: 60 seconds
+       - Equipment: None (bodyweight exercise)
+       - Instructions: Start in a plank position, lower your body until your chest nearly touches the floor, then push back up.
+       - Duration: Each rep should take about 2-3 seconds.
+
+    Perform this routine 1-2 times a week, allowing at least 48 hours of rest between chest workouts. Always warm up before exercising and cool down afterwards. Focus on proper form to maximize chest engagement and minimize the risk of injury."
+
+  - condition:
+      - type: slot
+        name: body_part
+        value: back
+    text: "Here's a comprehensive back workout routine:
+
+    1. Pull-Ups:
+       - Sets: 4, Reps: 8-12 (or to failure), Rest: 90 seconds
+       - Equipment: Pull-up bar
+       - Instructions: Hang from a bar with palms facing away, pull yourself up until your chin is over the bar, then lower slowly.
+       - Duration: Each rep should take about 3-4 seconds.
+
+    2. Bent-Over Rows:
+       - Sets: 4, Reps: 10-12, Rest: 90 seconds
+       - Equipment: Barbell or dumbbells
+       - Instructions: Bend at the hips, keeping your back straight. Pull the weight to your lower chest, then lower it back down.
+       - Duration: Perform each rep in about 3-4 seconds (1-2 seconds up, 1-2 seconds down).
+
+    3. Seated Cable Rows:
+       - Sets: 3, Reps: 12-15, Rest: 60 seconds
+       - Equipment: Cable machine, rowing attachment
+       - Instructions: Sit at a cable machine, pull the handle to your abdomen, squeezing your shoulder blades together, then slowly return to the start.
+       - Duration: Each rep should take about 4 seconds (2 seconds pull, 2 seconds return).
+
+    4. Face Pulls:
+       - Sets: 3, Reps: 15-20, Rest: 60 seconds
+       - Equipment: Cable machine, rope attachment
+       - Instructions: Set a cable pulley to head height, pull the rope towards your face, separating your hands as you pull.
+       - Duration: Perform each rep in about 3-4 seconds.
+
+    5. Deadlifts:
+       - Sets: 3, Reps: 6-8, Rest: 120 seconds
+       - Equipment: Barbell
+       - Instructions: Stand with feet hip-width apart, bend at your hips and knees to lower the bar to your shins, then stand back up.
+       - Duration: Each rep should take about 3-4 seconds.
+
+    Perform this routine 1-2 times a week, allowing adequate recovery time between sessions. Always prioritize proper form over weight lifted, especially for exercises like deadlifts."
+
+  - condition:
+      - type: slot
+        name: body_part
+        value: legs
+    text: "Here's a comprehensive leg workout routine:
+
+    1. Barbell Back Squats:
+       - Sets: 4, Reps: 8-10, Rest: 120 seconds
+       - Equipment: Barbell, squat rack
+       - Instructions: Place a barbell on your upper back, squat down until your thighs are parallel to the ground, then push back up.
+       - Duration: Each rep should take about 3-4 seconds (1-2 seconds down, 1-2 seconds up).
+
+    2. Romanian Deadlifts:
+       - Sets: 3, Reps: 10-12, Rest: 90 seconds
+       - Equipment: Barbell or dumbbells
+       - Instructions: Hold the weight in front of your thighs, hinge at the hips to lower the weight along your legs, feeling a stretch in your hamstrings, then return to standing.
+       - Duration: Perform each rep in about 4 seconds (2 seconds down, 2 seconds up).
+
+    3. Walking Lunges:
+       - Sets: 3, Reps: 12-15 per leg, Rest: 60 seconds
+       - Equipment: Dumbbells (optional)
+       - Instructions: Step forward into a lunge, lowering your back knee towards the ground. Push off your front foot to bring your back leg forward into the next lunge.
+       - Duration: Each lunge (one leg) should take about 3-4 seconds.
+
+    4. Leg Press:
+       - Sets: 3, Reps: 12-15, Rest: 90 seconds
+       - Equipment: Leg press machine
+       - Instructions: Sit in the leg press machine, push the platform away with your feet, then slowly lower it back down.
+       - Duration: Each rep should take about 4-5 seconds (2 seconds push, 2-3 seconds lower).
+
+    5. Calf Raises:
+       - Sets: 4, Reps: 15-20, Rest: 60 seconds
+       - Equipment: Calf raise machine or step
+       - Instructions: Stand on the edge of a step, raise your heels as high as possible, then lower them below the step.
+       - Duration: Perform each rep in about 3 seconds (1 second up, 2 seconds down).
+
+    6. Bulgarian Split Squats:
+       - Sets: 3, Reps: 10-12 per leg, Rest: 60 seconds
+       - Equipment: Bench, dumbbells (optional)
+       - Instructions: Stand with one foot elevated behind you on a bench. Lower your back knee towards the ground, then push back up.
+       - Duration: Each rep should take about 3-4 seconds.
+
+    Perform this routine 1-2 times a week, with at least two days of rest between sessions. Always start with a proper warm-up and end with stretching. Stay hydrated and listen to your body."
+
+  - condition:
+      - type: slot
+        name: body_part
+        value: arms
+    text: "Here's a comprehensive arm workout routine:
+
+    1. Barbell Curls:
+       - Sets: 4, Reps: 8-10, Rest: 60 seconds
+       - Equipment: Barbell
+       - Instructions: Stand with the barbell at hip level, palms facing forward. Curl the bar up to shoulder level, then lower slowly.
+       - Duration: Each rep should take about 3-4 seconds (1-2 seconds up, 2 seconds down).
+
+    2. Tricep Pushdowns:
+       - Sets: 4, Reps: 10-12, Rest: 60 seconds
+       - Equipment: Cable machine, straight or V-bar attachment
+       - Instructions: Face the cable machine, grip the bar with palms down, and push down until your arms are fully extended.
+       - Duration: Perform each rep in about 3 seconds (1 second down, 2 seconds up).
+
+    3. Hammer Curls:
+       - Sets: 3, Reps: 10-12 per arm, Rest: 60 seconds
+       - Equipment: Dumbbells
+       - Instructions: Hold dumbbells at your sides with palms facing each other. Curl the weights up, keeping your palms facing each other throughout.
+       - Duration: Each rep should take about 3-4 seconds.
+
+    4. Overhead Tricep Extensions:
+       - Sets: 3, Reps: 12-15, Rest: 60 seconds
+       - Equipment: Dumbbell or EZ-bar
+       - Instructions: Hold the weight overhead with both hands. Lower it behind your head by bending your elbows, then extend back up.
+       - Duration: Perform each rep in about 4 seconds (2 seconds down, 2 seconds up).
+
+    5. Preacher Curls:
+       - Sets: 3, Reps: 10-12, Rest: 60 seconds
+       - Equipment: Preacher bench, EZ-bar or dumbbells
+       - Instructions: Sit at a preacher bench with your armpits just over the edge. Curl the weight up, then lower slowly.
+       - Duration: Each rep should take about 4 seconds (1-2 seconds up, 2-3 seconds down).
+
+    6. Dips:
+       - Sets: 3, Reps: 10-15 (or to failure), Rest: 60 seconds
+       - Equipment: Parallel bars or dip station
+       - Instructions: Support your body on the bars with straight arms. Lower your body by bending your elbows, then push back up.
+       - Duration: Perform each rep in about 3-4 seconds.
+
+    Perform this routine 1-2 times a week, allowing at least 48 hours of rest between arm workouts. Always warm up before exercising and cool down afterwards. Focus on proper form to maximize muscle engagement and minimize the risk of injury."
+
+  - condition:
+      - type: slot
+        name: body_part
+        value: shoulders
+    text: "Here's a comprehensive shoulder workout routine:
+
+    1. Overhead Press:
+       - Sets: 4, Reps: 8-10, Rest: 90 seconds
+       - Equipment: Barbell or dumbbells
+       - Instructions: Stand with the weight at shoulder level, press it overhead until your arms are fully extended, then lower back down.
+       - Duration: Each rep should take about 3-4 seconds (1-2 seconds up, 1-2 seconds down).
+
+    2. Lateral Raises:
+       - Sets: 3, Reps: 12-15, Rest: 60 seconds
+       - Equipment: Dumbbells
+       - Instructions: Stand with dumbbells at your sides, raise them out to the sides until they're at shoulder level, then lower slowly.
+       - Duration: Perform each rep in about 3-4 seconds (1-2 seconds up, 2 seconds down).
+
+    3. Front Raises:
+       - Sets: 3, Reps: 12-15, Rest: 60 seconds
+       - Equipment: Barbell or dumbbells
+       - Instructions: Hold the weight in front of your thighs, raise it to shoulder level in front of you, then lower back down.
+       - Duration: Each rep should take about 3-4 seconds.
+
+    4. Reverse Flyes:
+       - Sets: 3, Reps: 12-15, Rest: 60 seconds
+       - Equipment: Dumbbells or cable machine
+       - Instructions: Bend at the hips, let the weights hang down. Raise your arms out to the sides, squeezing your shoulder blades together.
+       - Duration: Perform each rep in about 3-4 seconds (1-2 seconds up, 1-2 seconds down).
+
+    5. Shrugs:
+       - Sets: 3, Reps: 15-20, Rest: 60 seconds
+       - Equipment: Barbell or dumbbells
+       - Instructions: Hold the weight in front of your thighs, lift your shoulders towards your ears, then lower them back down.
+       - Duration: Each rep should take about 2-3 seconds (1 second up, 1-2 seconds down).
+
+    6. Face Pulls:
+       - Sets: 3, Reps: 12-15, Rest: 60 seconds
+       - Equipment: Cable machine, rope attachment
+       - Instructions: Set a cable pulley to head height, pull the rope towards your face, separating your hands as you pull.
+       - Duration: Perform each rep in about 3-4 seconds.
+
+    Perform this routine 1-2 times a week, ensuring adequate rest between sessions. Always prioritize proper form over weight lifted to prevent injury and maximize muscle engagement."
+
+  - condition:
+      - type: slot
+        name: body_part
+        value: abs
+    text: "Here's a comprehensive abs workout routine:
+
+    1. Planks:
+       - Sets: 3, Duration: 30-60 seconds, Rest: 30 seconds
+       - Equipment: None (bodyweight exercise)
+       - Instructions: Hold a push-up position with your forearms on the ground, keeping your body in a straight line from head to heels.
+       - Duration: Hold for 30-60 seconds, or as long as you can maintain proper form.
+
+    2. Russian Twists:
+       - Sets: 3, Reps: 20-30 (total), Rest: 30 seconds
+       - Equipment: Medicine ball or weight plate (optional)
+       - Instructions: Sit with your knees bent and feet off the ground. Lean back slightly and rotate your torso from side to side.
+       - Duration: Perform each twist (left and right) in about 2 seconds.
+
+    3. Bicycle Crunches:
+       - Sets: 3, Reps: 20-30 (total), Rest: 30 seconds
+       - Equipment: None (bodyweight exercise)
+       - Instructions: Lie on your back, hands behind your head. Alternate bringing opposite elbow to opposite knee while extending the other leg.
+       - Duration: Each rep (left and right) should take about 2-3 seconds.
+
+    4. Leg Raises:
+       - Sets: 3, Reps: 12-15, Rest: 60 seconds
+       - Equipment: None (can use captain's chair for support)
+       - Instructions: Lie on your back with legs straight. Keeping them straight, lift your legs to a 90-degree angle, then lower slowly.
+       - Duration: Perform each rep in about 4 seconds (2 seconds up, 2 seconds down).
+
+    5. Mountain Climbers:
+       - Sets: 3, Duration: 30-45 seconds, Rest: 30 seconds
+       - Equipment: None (bodyweight exercise)
+       - Instructions: Start in a push-up position. Alternate bringing each knee towards your chest in a running motion.
+       - Duration: Aim for a quick, controlled pace, about 1 second per leg movement.
+
+    6. Dead Bug:
+       - Sets: 3, Reps: 10-12 per side, Rest: 30 seconds
+       - Equipment: None (bodyweight exercise)
+       - Instructions: Lie on your back with arms extended towards the ceiling and legs in a tabletop position. Lower opposite arm and leg simultaneously, then return to start position.
+       - Duration: Each rep should take about 4-5 seconds (2 seconds down, 2-3 seconds up).
+
+    7. Pallof Press:
+       - Sets: 3, Reps: 10-12 per side, Rest: 30 seconds
+       - Equipment: Cable machine or resistance band
+       - Instructions: Stand sideways to a cable machine, hold the handle at chest height. Press the handle straight out, resisting rotation, then return to chest.
+       - Duration: Perform each rep in about 4 seconds (2 seconds out, 2 seconds in).
+
+    Perform this routine 2-3 times a week, allowing at least one day of rest between core workouts. Focus on maintaining proper form throughout each exercise. As you progress, you can increase the duration or number of reps for each exercise."
+
+  utter_exercise_duration:
+  - text: "The ideal exercise duration depends on various factors including your fitness level, goals, and the type of exercise. Here are some general guidelines:
+
+    1. Cardio exercises:
+       - Moderate-intensity: Aim for 150-300 minutes per week
+       - Vigorous-intensity: Aim for 75-150 minutes per week
+       - You can break this into 30-60 minute sessions, 5 days a week
+
+    2. Strength training:
+       - Aim for 2-3 sessions per week, targeting all major muscle groups
+       - Each session can last 45-60 minutes
+       - Allow at least one day of rest between sessions for each muscle group
+
+    3. High-Intensity Interval Training (HIIT):
+       - Sessions typically last 20-30 minutes
+       - Perform 1-3 times per week, with rest days in between
+
+    4. Flexibility and mobility work:
+       - Aim for 5-10 minutes daily or 15-30 minutes 2-3 times per week
+
+    5. Individual exercises:
+       - Strength exercises: 3-4 sets of 8-12 reps for each exercise
+       - Plank holds: Start with 20-30 seconds, progress to 60-90 seconds
+       - Other static holds: Usually 30-60 seconds
+
+    Remember, consistency is key. It's better to do shorter workouts regularly than longer workouts sporadically. Always listen to your body and adjust the duration based on your fitness level and how you feel. Gradually increase duration and intensity as your fitness improves."
+
+  utter_exercise_technique:
+  - text: "Proper exercise technique is crucial for effectiveness and safety. Here are some general tips for maintaining good form:
+
+    1. Maintain neutral spine alignment: Keep your back straight and core engaged during exercises.
+
+    2. Control the movement: Avoid using momentum; control the weight throughout the entire range of motion.
+
+    3. Full range of motion: Unless specifically doing partial reps, move through the full range of motion for each exercise.
+
+    4. Breathing: Generally, exhale during the exertion phase and inhale during the easier phase of an exercise.
+
+    5. Joint alignment: Keep your joints in proper alignment to avoid unnecessary stress. For example, keep knees in line with toes during squats.
+
+    6. Mind-muscle connection: Focus on the muscle you're targeting during each exercise.
+
+    7. Stable base: Ensure you have a solid foundation. For standing exercises, keep feet shoulder-width apart unless the exercise specifies otherwise.
+
+    8. Proper grip: For exercises using bars or handles, grip firmly but not so tight that it causes fatigue.
+
+    9. Tempo: Control the speed of your reps. A general guideline is to take 2 seconds for the concentric phase (lifting) and 2-3 seconds for the eccentric phase (lowering).
+
+    10. Rest between sets: Allow adequate rest between sets to maintain proper form in subsequent sets.
+
+    Remember, it's better to perform fewer reps with proper form than more reps with poor form. If you're unsure about your technique, consider working with a certified personal trainer."
+
+  utter_exercise_equipment:
+  - text: "Here's a list of common exercise equipment and their uses:
+
+    1. Dumbbells: Versatile weights for various strength exercises.
+    2. Barbell: Used for compound movements like squats, deadlifts, and bench presses.
+    3. Kettlebells: Great for dynamic, full-body movements.
+    4. Resistance bands: Provide variable resistance for strength training and rehabilitation.
+    5. Stability ball: Enhances core engagement in various exercises.
+    6. Foam roller: Used for self-myofascial release and recovery.
+    7. Yoga mat: Provides cushioning and grip for floor exercises and yoga.
+    8. Pull-up bar: For pull-ups and hanging exercises.
+    9. TRX or suspension trainer: Allows for bodyweight exercises with variable resistance.
+    10. Medicine ball: Used for dynamic, power-based exercises.
+    11. Bench: For various pressing exercises and step-ups.
+    12. Squat rack: Provides safety for heavy squats and other barbell exercises.
+    13. Cable machine: Offers constant tension throughout the range of motion.
+    14. Treadmill: For indoor running or walking.
+    15. Stationary bike: Low-impact cardio option.
+    16. Rowing machine: Full-body cardio workout.
+    17. Jump rope: Great for cardio and coordination.
+
+    When starting out, focus on basic equipment like dumbbells, a stability ball, and resistance bands. As you progress, you can add more specialized equipment based on your goals and preferences."
+
+  utter_exercise_benefits:
+  - text: "Regular exercise offers numerous benefits for both physical and mental health:
+
+    Physical benefits:
+    1. Improved cardiovascular health
+    2. Increased muscle strength and endurance
+    3. Better flexibility and mobility
+    4. Weight management
+    5. Stronger bones and reduced risk of osteoporosis
+    6. Improved balance and reduced risk of falls
+    7. Better sleep quality
+    8. Increased energy levels
+    9. Improved immune function
+    10. Reduced risk of chronic diseases (e.g., heart disease, diabetes, some cancers)
+
+    Mental and emotional benefits:
+    1. Reduced stress and anxiety
+    2. Improved mood and reduced risk of depression
+    3. Enhanced cognitive function and memory
+    4. Increased self-esteem and confidence
+    5. Better focus and concentration
+    6. Improved body image
+    7. Social benefits from group exercises or team sports
+    8. Reduced risk of cognitive decline and dementia in older adults
+
+    Remember, these benefits can be achieved through consistent, moderate exercise. You don't need to be an athlete to experience the positive effects of regular physical activity."
+
+  utter_exercise_frequency:
+  - text: "The recommended exercise frequency depends on your fitness goals, current fitness level, and the types of exercise you're doing. Here are some general guidelines:
+
+    1. Cardiovascular exercise:
+       - Aim for at least 150 minutes of moderate-intensity or 75 minutes of vigorous-intensity aerobic activity per week.
+       - This can be spread out over 3-5 days per week.
+
+    2. Strength training:
+       - Aim to train each major muscle group 2-3 times per week.
+       - Allow at least one day of rest between sessions for each muscle group.
+
+    3. Flexibility and mobility work:
+       - Incorporate stretching and mobility exercises daily, or at least 2-3 times per week.
+
+    4. High-Intensity Interval Training (HIIT):
+       - 1-3 sessions per week, with rest days in between.
+
+    5. Rest and recovery:
+       - Include at least 1-2 rest days per week to allow for proper recovery.
+
+    For beginners:
+    - Start with 2-3 days of exercise per week, combining cardio and strength training.
+    - Gradually increase frequency as your fitness improves.
+
+    For intermediate to advanced exercisers:
+    - Aim for 4-6 days of exercise per week, alternating between different types of workouts.
+
+    Remember, consistency is key. It's better to exercise moderately 3-4 times a week consistently than to have intense workouts sporadically. Always listen to your body and adjust your frequency if you feel overly fatigued or notice a decrease in performance."
+
+  utter_exercise_progression:
+  - text: "Progressing your workouts is crucial for continued improvement. Here are some strategies for exercise progression:
+
+    1. Increase weight: Gradually add more weight to your strength exercises as you get stronger.
+
+    2. Increase reps: Add more repetitions to your sets before increasing weight.
+
+    3. Increase sets: Add an extra set to your exercises to increase overall volume.
+
+    4. Decrease rest time: Shorten the rest periods between sets to increase workout intensity.
+
+    5. Increase time under tension: Slow down the eccentric (lowering) phase of the movement.
+
+    6. Increase range of motion: Perform exercises through a fuller range of motion.
+
+    7. Increase frequency: Add an extra workout day to your weekly routine.
+
+    8. Increase duration: Gradually extend the length of your cardio sessions.
+
+    9. Increase intensity: For cardio, increase speed or resistance.
+
+    10. Add complexity: Progress from simple exercises to more complex, compound movements.
+
+    11. Modify exercise order: Perform challenging exercises earlier in your workout when you're less fatigued.
+
+    12. Introduce variations: Try different versions of exercises to challenge your muscles in new ways.
+
+    13. Periodization: Systematically vary your training program over time.
+
+    Remember to progress gradually to avoid injury. A good rule of thumb is to increase by about 5-10% per week. Always maintain proper form as you progress. If you're unsure about how to safely progress your workouts, consider consulting with a certified fitness professional."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - utter_happy
+  - utter_greet
+  - utter_goodbye
+  - utter_iamabot
+  - utter_exercise_advice
+  - utter_exercise_duration
+  - utter_exercise_technique
+  - utter_exercise_equipment
+  - utter_exercise_benefits
+  - utter_exercise_frequency
+  - utter_exercise_progression
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_ask_for_more_info
+  - utter_express_gratitude
+  - utter_express_confusion
+  - utter_ask_for_alternatives
+

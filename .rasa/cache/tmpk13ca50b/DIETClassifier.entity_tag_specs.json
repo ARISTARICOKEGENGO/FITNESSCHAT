@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-body_part",
+      "2": "I-body_part",
+      "3": "L-body_part",
+      "4": "U-body_part",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-body_part": 1,
+      "I-body_part": 2,
+      "L-body_part": 3,
+      "U-body_part": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]
